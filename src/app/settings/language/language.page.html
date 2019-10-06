@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button slot="icon-only"></ion-back-button>
+
+        </ion-buttons>
+        <ion-title>language</ion-title>
+        <ion-buttons slot="primary">
+            <ion-button (click)="save()">
+                <ion-icon name="document"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+        <ion-radio-group [allowEmptySelection]="false">
+            <ion-item *ngFor="let item of keys(language)">
+                <ion-label>{{language[item]}}</ion-label>
+                <ion-radio slot="end" [checked]="item==selected" (click)="setLanguage(item)">{{item}}</ion-radio>
+            </ion-item>
+
+        </ion-radio-group>
+
+    </ion-list>
+</ion-content>

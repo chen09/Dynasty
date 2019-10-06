@@ -1,0 +1,119 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Settings
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-list no-border>
+        <ion-list-header>
+            Classes
+        </ion-list-header>
+        <ion-item>
+            <ion-icon name='planet' item-start></ion-icon>
+            Astronomy
+            <ion-note slot="end">
+                To the moon
+            </ion-note>
+        </ion-item>
+
+        <ion-item>
+            <ion-toggle checked="false"></ion-toggle>
+            <ion-label>
+                Muggle Studies
+            </ion-label>
+            <ion-icon name='body' item-start></ion-icon>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name='leaf' slot="start"></ion-icon>
+            Herbology
+            <ion-icon name='rose' slot="end" color="secondary"></ion-icon>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name='flask' slot="start"></ion-icon>
+            Potions
+            <ion-note slot="end">
+                Poisonous
+            </ion-note>
+        </ion-item>
+
+
+    </ion-list>
+
+
+    <ion-list>
+
+        <ion-list-header>
+            Activities
+        </ion-list-header>
+
+        <ion-item>
+            Incantation
+            <ion-icon name='color-wand' slot="start"></ion-icon>
+            <ion-note slot="end">Crucio!</ion-note>
+        </ion-item>
+
+        <ion-item>
+            <ion-toggle checked="true"></ion-toggle>
+            <ion-label>
+                Quidditch Practice
+            </ion-label>
+            <ion-icon name='brush' slot="start"></ion-icon>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-icon name='wine' slot="start"></ion-icon>
+            Mead Drinking
+            <ion-note slot="end">Yes please</ion-note>
+        </ion-item>
+
+
+    </ion-list>
+
+
+    <section>
+        <ion-list>
+            <ion-list-header>
+                XXXX
+            </ion-list-header>
+            <ion-item [routerLink]="['/settings','language']">
+                <ion-icon name='book' slot="start"></ion-icon>
+                Language
+                <ion-note slot="end">{{currentLanguageString}}</ion-note>
+            </ion-item>
+        </ion-list>
+
+    </section>
+
+    <section>
+        <ion-button expand="block" color="light">Switch account</ion-button>
+    </section>
+
+    <section>
+        <ion-button expand="block" color="light">Logout</ion-button>
+    </section>
+
+    <!--  <ion-list>-->
+    <!--    <ion-item *ngFor="let item of items">-->
+    <!--      <ion-icon [name]="item.icon" slot="start"></ion-icon>-->
+    <!--      {{item.title}}-->
+    <!--      <div class="item-note" slot="end">-->
+    <!--        {{item.note}}-->
+    <!--      </div>-->
+    <!--    </ion-item>-->
+    <!--  </ion-list>-->
+    <!--
+      <div *ngIf="selectedItem" padding>
+        You navigated here from <b>{{selectedItem.title }}</b>
+      </div>
+    -->
+</ion-content>
