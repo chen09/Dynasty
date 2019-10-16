@@ -46,6 +46,14 @@ export class PaintComponent implements OnInit, AfterViewInit {
         });
     }
 
+    // handleStart($event) {
+    //     console.log($event);
+    //     const lastX = $event.touches[0].pageX;
+    //     const lastY = $event.touches[0].pageY;
+    //     console.log('x:' + lastX + '\ty:' + lastY);
+    //
+    // }
+
 }
 
 function getOffset(el: HTMLElement) {
