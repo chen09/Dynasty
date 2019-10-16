@@ -28,19 +28,16 @@ export class CanvasDrawComponent implements OnInit, AfterViewInit {
         const {nativeElement} = this.elRef;
         this.htmlCanvasElement = nativeElement.querySelector('canvas') as HTMLCanvasElement;
 
-        console.log(this.canvas);
-        console.log(this.htmlCanvasElement);
-
-        // console.log(this.elRef);
-        // console.log(this.elRef.nativeElement);
-        // console.log(this.elRef.nativeElement.querySelector('canvas'));
-        // console.log(this.elRef.nativeElement.querySelector('canvas').getContext('2d'));
-        // console.log(this.elRef.nativeElement.offsetWidth);
-        // console.log(this.elRef.nativeElement.offsetHeight);
-
         this.canvasElement = this.canvas.nativeElement;
-        this.renderer2.setAttribute(this.canvasElement, 'width', this.platform.width() + '');
-        this.renderer2.setAttribute(this.canvasElement, 'height', this.platform.height() + '');
+
+        console.log('width:' + this.platform.width());
+        console.log('height:' + this.platform.height());
+
+        const offset = getOffset(this.htmlCanvasElement);
+        console.log(offset);
+
+        this.renderer2.setAttribute(this.canvasElement, 'width', this.platform.width() - offset.left + '');
+        this.renderer2.setAttribute(this.canvasElement, 'height', this.platform.height() - offset.top + '');
 
         // this.canvas.width = mountPoint.offsetWidth;
         // this.canvas.height = mountPoint.offsetHeight;
@@ -97,6 +94,19 @@ export class CanvasDrawComponent implements OnInit, AfterViewInit {
 
     handleEnd($event) {
         // console.log($event);
+    }
+
+    clear() {
+        const ctx = this.canvasElement.getContext('2d');
+        console.log(ctx);
+        // ctx.beginPath();
+        ctx.clearRect(0, 0, this.canvasElement.width, this.canvasElement.height);
+
+    }
+
+    check() {
+        const dataURL = this.htmlCanvasElement.toDataURL();
+        console.log(dataURL);
     }
 }
 

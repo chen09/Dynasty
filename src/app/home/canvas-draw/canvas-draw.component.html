@@ -1,2 +1,18 @@
-<canvas #myCanvas (touchstart)="handleStart($event)" (touchmove)="handleMove($event)"
-        (touchend)="handleEnd($event)"></canvas>
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="secondary">
+            <ion-button (click)="clear()">
+                <ion-icon slot="icon-only" name="refresh"></ion-icon>
+            </ion-button>
+            <ion-button (click)="check()">
+                <ion-icon slot="icon-only" name="checkmark"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+    <canvas #myCanvas (touchstart)="handleStart($event)" (touchmove)="handleMove($event)"
+            (touchend)="handleEnd($event)"></canvas>
+</ion-content>
